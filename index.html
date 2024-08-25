@@ -8,6 +8,15 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
+  <!-- Device Selection Popup -->
+  <div id="device-popup" class="device-popup">
+    <div class="device-popup-content">
+      <h2>Select Your Device</h2>
+      <button id="pc-button">PC</button>
+      <button id="phone-button">Phone</button>
+    </div>
+  </div>
+
   <!-- ....................Start Nav Bar.................... -->
   <nav>
     <div class="container nav-container">
@@ -308,6 +317,29 @@
   </footer>
   <!-- ....................End Footer Section.................... -->
 
+
+  <!--- . .  . Pop up window for phone or pc choicee. . . . . --->
+  <script>
+    // Function to show the device selection popup
+    function showDevicePopup() {
+      document.getElementById('device-popup').style.display = 'block';
+    }
+
+    // Function to set the view based on user selection
+    function setDeviceView(view) {
+      document.body.classList.add(view);
+      document.getElementById('device-popup').style.display = 'none';
+    }
+
+    // Event listeners for buttons
+    document.getElementById('pc-button').addEventListener('click', () => setDeviceView('pc'));
+    document.getElementById('phone-button').addEventListener('click', () => setDeviceView('phone'));
+
+    // Show the popup on page load
+    window.onload = showDevicePopup;
+  </script>
+  <!-- . . . . .  End Of Pc or phone Choice . . . . -->
 </body>
 </html>
+
 
