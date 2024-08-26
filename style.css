@@ -719,6 +719,7 @@ body {
 .header-left img {
   max-width: 100%;
   height: auto;
+  /* Ensure the image scales correctly */
 }
 
 /* About Section */
@@ -767,6 +768,13 @@ body {
   height: auto;
 }
 
+/* Specific Styles for IMG_8670.png */
+.img-large {
+  max-width: 100%;
+  height: auto;
+  /* Ensure the image scales correctly and doesn't become too small */
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .header-container {
@@ -781,5 +789,21 @@ body {
 
   .project-container {
     flex-direction: column;
+  }
+  
+  /* Adjust image size specifically for smaller screens if needed */
+  .img-large {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* PC-specific styles */
+@media (min-width: 769px) {
+  .img-large {
+    /* Ensure the image scales properly on larger screens */
+    max-width: 100%;
+    height: auto;
+    /* You can set a specific width if needed */
   }
 }
