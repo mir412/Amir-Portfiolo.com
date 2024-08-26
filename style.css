@@ -755,6 +755,12 @@ body {
   height: auto;
 }
 
+/* Icon Images */
+.icon1 {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Media Queries */
 @media (max-width: 768px) {
   .header-container {
@@ -771,5 +777,3 @@ body {
     flex-direction: column;
   }
 }
-
-
