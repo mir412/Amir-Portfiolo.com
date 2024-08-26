@@ -275,35 +275,36 @@
 
 
   <!-- ....................Start Contact Section.................... -->
-  <section id="Contact">
-    <a href="#Contact" class="arrow"><img src="./img/arrow.png" class="icon1"></a>
-    <p class="heading-p">Get in Touch</p>
-    <h1 class="heading">Contact Me</h1>
-    <div class="contact-container container">
-        <div class="email">
-            <img src="./img/email.png" class="icon1">
-            <a href="https://www.google.com/"><h5>Pooleamir4@gmail.com</h5></a>
-        </div>
-        <div class="linkedin">
-            <img src="./img/linkedin.png" class="icon1">
-            <a href="https://www.linkedin.com/in/amir-poole-1aa6b9197/"><h5>Linkedin</h5></a>
-        </div>
-        <!-- New containers for Name and Comment -->
-        <div class="name">
-            <input type="text" placeholder="Your Name">
-        </div>
-        <div class="comment">
-            <textarea placeholder="Your Comment"></textarea>
-        </div>
-        <!-- Submit button -->
-        <div class="submit-button">
-          <button type=""submit">Submit</button>
-        </div>
+<section id="Contact">
+  <a href="#Contact" class="arrow"><img src="./img/arrow.png" class="icon1"></a>
+  <p class="heading-p">Get in Touch</p>
+  <h1 class="heading">Contact Me</h1>
+  <div class="contact-container container">
+    <div class="email">
+      <img src="./img/email.png" class="icon1">
+      <a href="mailto:Pooleamir4@gmail.com"><h5>Pooleamir4@gmail.com</h5></a>
     </div>
+    <div class="linkedin">
+      <img src="./img/linkedin.png" class="icon1">
+      <a href="https://www.linkedin.com/in/amir-poole-1aa6b9197/"><h5>LinkedIn</h5></a>
+    </div>
+
+    <!-- Contact form -->
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="d68cb8d9-704c-4945-b0fd-bfa1c94abc9d">
+      <div class="name">
+        <input type="text" name="name" placeholder="Your Name" required>
+      </div>
+      <div class="comment">
+        <textarea name="message" placeholder="Your Comment" required></textarea>
+      </div>
+      <div class="submit-button">
+        <button type="submit">Submit</button>
+      </div>
+    </form>
+  </div>
 </section>
-
-  <!-- ....................End Contact Section.................... -->
-
+<!-- ....................End Contact Section.................... -->
 
   <!-- ....................Start Footer Section.................... -->
   <footer>
