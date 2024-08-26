@@ -736,7 +736,7 @@ body {
 
 /* Projects Section */
 .project-container {
-  display: flex;
+  display: grid;
   flex-wrap: wrap;
   padding: 20px;
 }
