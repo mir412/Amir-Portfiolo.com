@@ -755,6 +755,12 @@ body {
   height: auto;
 }
 
+/* Specific Styles for Arrow Image */
+.arrow img[src*="arrow.png"] {
+  max-width: 50px; /* Adjust width as needed */
+  height: auto;
+}
+
 /* Icon Images */
 .icon1 {
   max-width: 100%;
