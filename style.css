@@ -724,7 +724,7 @@ body {
 
 /* About Section */
 .about-container {
-  display: flex;
+  display: grid;
   justify-content: space-between;
   padding: 20px;
 }
