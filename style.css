@@ -748,6 +748,7 @@ body {
 
 /* Experience Section */
 .experience-container {
+  display: grid;
   padding: 20px;
 }
 
