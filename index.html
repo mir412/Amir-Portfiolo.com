@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amir's Portfolio Website</title>
+  <title>Personal portfolio Website</title>
   <!-- ....................Custom Css Link.................... -->
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -26,11 +26,50 @@
         <li><a href="#Experiences">Experiences</a></li>
         <li><a href="#Projects">Projects</a></li>
         <!---<li><a href ="Jobs">Jobs</a></li>--->
-        <li><a href="#Contact">Contact</a></li>
+        <li><a href="#Contact">Contact</a></li> 
+        <button id="toggle-dark-mode" class="toggle-dark-mode">
+          <img id="mode-icon" src="./img/moon.png" alt="Toggle Dark Mode">
+        </button>
+        
       </ul>
     </div>
   </nav>
   <!-- ....................End Nav Bar.................... -->
+   <!-- Start JavaScript for Dark Mode Toggle -->
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+  const toggleButton = document.getElementById('toggle-dark-mode');
+  const modeIcon = document.getElementById('mode-icon');
+
+  // Check the initial mode and set the icon
+  if (document.body.classList.contains('dark-mode')) {
+    modeIcon.src = './img/sun.png'; // Dark mode icon
+  } else {
+    modeIcon.src = './img/moon.png'; // Light mode icon
+  }
+
+  toggleButton.addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+    
+    // Toggle the icon based on the mode
+    if (document.body.classList.contains('dark-mode')) {
+      modeIcon.src = './img/sun.png'; // Dark mode icon
+    } else {
+      modeIcon.src = './img/moon.png'; // Light mode icon
+    }
+  });
+});
+
+  </script>
+  
+   <!---<script>
+    const button = document.getElementById('toggleMode');
+    button.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script> -->
+
+    <!-- End JavaScript for Dark Mode Toggle -->
 
 
   <!-- ....................Start Header Section.................... -->
@@ -44,8 +83,9 @@
         <h1>Amir Poole</h1>
         <h2>Computer Scientist  Software Engineer</h2>
         <div class="header-action-aria">
-          <a href="https://mir412.github.io/Amir-Portfiolo.com/Resume4.pdf" class="btn" download="Resume4.pdf">Download Resume</a>    
-          <a href="#Contact" class="btn btn-dark">Contact info</a>              
+          <a href="https://mir412.github.io/Amir-Portfiolo.com/Resume4.pdf" class="btn" download="Resume4.pdf">Download Resume</a>
+          <a href="https://mir412.github.io/Amir-Portfiolo.com/CoverLetter.pdf" class="btn" download="CoverLetter.pdf">Download CoverLetter</a>              
+          <a href="#Contact" class="btn">Contact info</a>           
         </div>
         <div class="header-social">
           <a href="https://www.linkedin.com/in/amir-poole-1aa6b9197/"><img src="./img/linkedin.png" class="icon1"></a>
@@ -54,7 +94,6 @@
       </div>
     </div>
   </header>
-
   <!-- ....................End Header Section.................... -->
 
 
@@ -97,7 +136,7 @@
 
   <!-- ....................Start Experience Section.................... -->
   <section id="Experiences">
-    <a href="#Experiences" class="arrow"><img src="./img/arrow.png" class="icon"></a>
+    <a href="#Experiences" class="arrow"><img src="./img/arrow.png" class="icon1"></a>
     <p class="heading-p">Explore My</p>
     <h1 class="heading">Experience</h1>
     <div class="container experience-container">
@@ -214,9 +253,9 @@
         </div>
       </div>
       <div class="project">
-        <img src="./img/project-2.png" alt="">
+        <img src="./img/SpaceStation.png" alt="">
         <h3>Space Staion System</h3>
-        <p></p>
+        <p>Our new safety system for the International Space Station will detect fires and air leaks while pinpointing the affected modules. It features controllable valves and fans, which can be operated automatically or manually by astronauts, along with real-time displays of fan speeds and valve statuses. By upgrading from the outdated and slow current life support system, we will enhance safety with advanced sensors that automatically address issues as they arise.</p>
         <h4>Senior year of college</h4>
         <div class="header-action-aria">
           <!--<a href="" class="btn">Github</a>
@@ -229,8 +268,8 @@
         <p>Pizza order system includes large , X-large ; 2 toppings aswell as 3 different crust options. When submited it went to a data base system</p>
         <h4>Senior year of college</h4>
         <div class="header-action-aria">
-          <a href="https://github.com/mir412/PizzaOrder-System" class="btn">Github</a>
-          <a href="https://mir412.github.io/PizzaOrder-System.com/" class="btn">Live Demo</a>
+          <a href="" class="btn">Github</a>
+          <a href="" class="btn">Live Demo</a>
         </div>
       </div>
       <!----<div class="project">
@@ -276,46 +315,45 @@
 
 
   <!-- ....................Start Contact Section.................... -->
-<section id="Contact">
-  <a href="#Contact" class="arrow"><img src="./img/arrow.png" class="icon1"></a>
-  <p class="heading-p">Get in Touch</p>
-  <h1 class="heading">Contact Me</h1>
-  <div class="contact-container container">
-    <div class="email">
-      <img src="./img/email.png" class="icon1">
-      <a href="mailto:Pooleamir4@gmail.com"><h5>Pooleamir4@gmail.com</h5></a>
+  <section id="Contact">
+    <a href="#Contact" class="arrow"><img src="./img/arrow.png" class="icon1"></a>
+    <p class="heading-p">Get in Touch</p>
+    <h1 class="heading">Contact Me</h1>
+    <div class="contact-container container">
+        <div class="email">
+            <img src="./img/email.png" class="icon1">
+            <a href="https://www.google.com/"><h5>Pooleamir4@gmail.com</h5></a>
+        </div>
+        <div class="linkedin">
+            <img src="./img/linkedin.png" class="icon1">
+            <a href="https://www.linkedin.com/in/amir-poole-1aa6b9197/"><h5>Linkedin</h5></a>
+        </div>
+        <div class="GitHub">
+          <img src="./img/github.png" class="icon1">
+          <a href="https://github.com/mir412"><h5>GitHub</h5></a>
+        </div>
+        <!-- New containers for Name and Comment -->
+        <div class="name">
+            <input type="text" placeholder="Your Name">
+        </div>
+        <div class="Phone Number">
+          <input type="text" name="name" placeholder="Your Phone Number" not required>
+        </div>
+        <div class="Email">
+          <input type="text" name="name" placeholder="Your Email" not required>
+        </div>
+        <div class="comment">
+            <textarea placeholder="Your Comment"></textarea>
+        </div>
+        <!-- Submit button -->
+        <div class="submit-button">
+          <button type=""submit">Submit</button>
+        </div>
     </div>
-    <div class="linkedin">
-      <img src="./img/linkedin.png" class="icon1">
-      <a href="https://www.linkedin.com/in/amir-poole-1aa6b9197/"><h5>LinkedIn</h5></a>
-    </div>
-    <div class="GitHub">
-      <img src="./img/github.png" class="icon1">
-      <a href="https://github.com/mir412"><h5>GitHub</h5></a>
-    </div>
-
-    <!-- Contact form -->
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="d68cb8d9-704c-4945-b0fd-bfa1c94abc9d">
-      <div class="name">
-        <input type="text" name="name" placeholder="Your Name" required>
-      </div>
-      <div class="Phone Number">
-        <input type="text" name="name" placeholder="Your Phone Number" not required>
-      </div>
-      <div class="Email">
-        <input type="text" name="name" placeholder="Your Email" not required>
-      </div>
-      <div class="comment">
-        <textarea name="message" placeholder="Your Comment" required></textarea>
-      </div>
-      <div class="submit-button">
-        <button type="submit">Submit</button>
-      </div>
-    </form>
-  </div>
 </section>
-<!-- ....................End Contact Section.................... -->
+
+  <!-- ....................End Contact Section.................... -->
+
 
   <!-- ....................Start Footer Section.................... -->
   <footer>
@@ -353,5 +391,8 @@
   <!-- . . . . .  End Of Pc or phone Choice . . . . -->
 </body>
 </html>
+
+
+
 
 
