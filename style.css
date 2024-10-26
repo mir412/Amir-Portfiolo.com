@@ -1,4 +1,5 @@
-*{
+/* Global Styles */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,26 +9,130 @@
   border: none;
   outline: none;
   scroll-behavior: smooth;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
 }
 
-:root{
-  --color-black: #fffcfc;
-  --color-white: #171616;
+:root {
+  --color-black: #232222;
+  --color-white: #fffcfc;
   --color-dark: #ffffff;
-  --color-dark-variant: #555555;  
-  --transition: .4s ease;
+  --color-dark-variant: #000000;
+  --transition: 0.4s ease;
 }
 
 body {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--color-black); /* Default dark mode background */
+  color: var(--color-white); /* Default dark mode text color */
 }
 
-h1, h2, h3, h4, h5, p, a, .btn, .btn-dark {
-  color: var(--color-white);
+/* Light mode styles */
+body:not(.dark-mode) {
+  background-color: var(--color-white); /* Light mode background */
+  color: var(--color-black); /* Light mode text color */
+}
+body:not(.dark-mode) h1, 
+body:not(.dark-mode) ,
+body:not(.dark-mode) h3, 
+body:not(.dark-mode) h4, 
+body:not(.dark-mode) h5, 
+body:not(.dark-mode) p, 
+body:not(.dark-mode) , 
+body:not(.dark-mode) .btn, 
+body:not(.dark-mode)  .btn-dark{
+  color: var(--color-black); /* Light mode text color */
 }
 
+/* Dark mode styles */
+body.dark-mode {
+  background-color: var(--color-black); /* Dark mode background */
+  color: var(--color-white); /* Dark mode text color */
+}
+
+body.dark-mode h1, 
+body.dark-mode , 
+body.dark-mode h3, 
+body.dark-mode h4, 
+body.dark-mode h5, 
+body.dark-mode p, 
+body.dark-mode a, 
+body.dark-mode .btn, 
+body.dark-mode .btn-dark {
+  color: var(--color-white); /* Dark mode text color */
+}
+
+/* Dark Mode Toggle Button */
+.toggle-dark-mode {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--color-dark-variant);
+  color: var(--color-white);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color var(--transition);
+  z-index: 1000; /* Ensure it is above other content */
+}
+
+.toggle-dark-mode:hover {
+  background: var(--color-dark);
+}
+
+/* Nav Styles */
+nav {
+  height: 8rem;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  background: var(--color-black);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logo {
+  font-size: 32px;
+  color: var(--color-white) !important;
+  text-decoration: none !important;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--color-white); /* Ensure nav links are white in dark mode */
+  transition: color var(--transition);
+}
+
+/* Remove hover color change */
+.nav-links a:hover {
+  color: var(--color-white); /* Keep the color same on hover */
+}
+
+/* Dark Mode Specific */
+body.dark-mode .nav-links a {
+  color: var(--color-white); /* Ensure color is applied in dark mode */
+}
+
+
+/* Heading Styles */
 h1, h2, h3, h4, h5 {
   line-height: 120%;
 }
@@ -58,6 +163,7 @@ h5 {
   margin-bottom: 3rem;
 }
 
+/* Other Styles */
 p {
   font-size: 17px;
   line-height: 140%;
@@ -126,6 +232,112 @@ img {
   margin: 0 auto;
   max-width: 1080px;
   width: 90%;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .about-container {
+    gap: 30px;
+  }
+  .basic-edu {
+    gap: 20px;
+  }
+  .experience-container {
+    gap: 30px;
+  }
+  .project-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  .logo {
+    display: none;
+  }
+  .nav-links {
+    justify-content: center;
+    width: 100%;
+  }
+  .experience-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 38px;
+  }
+  h2 {
+    font-size: 26px;
+  }
+  a {
+    font-size: 20px;
+  }
+  h3 {
+    font-size: 24px;
+  }
+  .arrow {
+    right: 5%;
+  }
+  .header-container {
+    width: 90%;
+    grid-template-columns: 1fr;
+  }
+  .header-left {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+  .about-left {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .basic-edu {
+    gap: 10px;
+  }
+  .experience-box {
+    padding: 10px;
+  }
+  .experience {
+    gap: 20px;
+  }
+  .ex-div {
+    gap: 10px;
+  }
+  .project-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.toggle-dark-mode {
+  position: fixed;
+  bottom: 20px; /* Distance from the bottom */
+  right: 20px;  /* Distance from the right */
+  background: var(--color-dark-variant);
+  color: var(--color-dark-text);
+  border: none;
+  border-radius: 50%; /* Make it round */
+  padding: 5px; /* Smaller padding for a smaller button */
+  cursor: pointer;
+  font-size: 16px; /* Adjust font size if needed */
+  transition: background-color var(--transition);
+  z-index: 1000; /* Ensure it is above other content */
+  width: 40px;  /* Fixed width */
+  height: 40px; /* Fixed height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-dark-mode:hover {
+  background: var(--color-dark);
+}
+
+#mode-icon {
+  width: 24px; /* Icon size */
+  height: 24px; /* Icon size */
 }
 
 /* .......................Start Nav Bar......................... */
@@ -498,7 +710,7 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: #fff;
+  background: rgb(252, 252, 252);
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -517,7 +729,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   background: #007bff;
-  color: #fff;
+  color: rgb(245, 245, 245);
 }
 
 .device-popup button:hover {
@@ -796,15 +1008,5 @@ body {
   .img-large {
     max-width: 100%;
     height: auto;
-  }
-}
-
-/* PC-specific styles */
-@media (min-width: 769px) {
-  .img-large {
-    /* Ensure the image scales properly on larger screens */
-    max-width: 100%;
-    height: auto;
-    /* You can set a specific width if needed */
   }
 }
